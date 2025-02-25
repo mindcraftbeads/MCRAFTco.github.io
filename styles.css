@@ -255,6 +255,16 @@ body {
     margin-right: auto; /* 水平居中 */
 }
 
+/* 针对 banner 文字样式 */
+.banner-text {
+    font-size: 1.2rem;  /* 设置字体大小 */
+    font-weight: normal;  /* 设置字体加粗 */
+    color: #4a4a4a00;  /* 设置文本颜色 */
+    font-family: 'Courier New', Courier, monospace;  /* 设置字体类型 */
+    margin-top: -525px;  /* 上边距，确保文字不会粘在轮播图下方 */
+    text-align: center; /* 确保图片在网格内垂直居中 */
+}
+
 /* 12 宫格布局 */
 .product-grid {
     display: grid;
@@ -350,6 +360,16 @@ body, .container {
         padding: 150px 10px; /* 控制高度，适应小屏幕 */
         margin-top: -20px; /* 确保横条位置合适 */
     }
+
+    .banner-text {
+        font-size: 1rem;  /* 设置字体大小 */
+        font-weight: normal;  /* 设置字体加粗 */
+        color: #2e2e2e;  /* 设置文本颜色 */
+        font-family: 'Courier New', Courier, monospace;  /* 设置字体类型 */
+        margin-top: -220px;  /* 上边距，确保文字不会粘在轮播图下方 */
+        text-align: center; /* 确保图片在网格内垂直居中 */
+    }
+
     .footer {
         position: absolute;  /* 固定在页面底部 */
         bottom: -900px;     /* 距离底部 20px */
