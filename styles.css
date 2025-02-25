@@ -50,7 +50,7 @@ body {
 .hamburger {
     position: absolute; /* 让它绝对定位 */
     top: 37px; /* 距离顶部 20px */
-    left: 130px; /* 距离左边 20px */
+    left: 20px; /* 距离左边 20px */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -72,7 +72,7 @@ body {
     font-weight: lighter;
     position: absolute;
     top: 49px; /* 垂直居中 */
-    left: 190px; /* 水平居中 */
+    left: 70px; /* 水平居中 */
     transform: translate(-50%, -50%); /* 调整精确居中 */
     cursor: pointer;
     font-family: Courier, monospace ; 
@@ -241,13 +241,6 @@ body {
     animation: imageSwitch 32s infinite 12s;  /* 同样调整 */
 }
 
-/* 响应式调整：当屏幕宽度较小时，logo 大小适应调整 */
-@media screen and (max-width: 768px) {
-    .logo a {
-        font-size: 2rem;
-    }
-}
-
 /* 横条部分 */
 .banner {
     background-image: url('your-image.jpg'); /* 替换为你想要的图片路径 */
@@ -313,12 +306,56 @@ body, .container {
 
 /* 响应式设计：调整屏幕较小时的布局 */
 @media screen and (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 列 */
-        grid-template-rows: auto; /* 自动调整行高 */
+
+    .images {
+        width: 100vw;  /* 宽度占满视口 */
+        height: 100vh; /* 高度占满视口 */
     }
 
-    .product-item img {
-        height: 200px; /* 控制图片高度 */
+    .menu {
+        width: 200px; /* 这里调整宽度，原本是 250px，可以更改为你需要的宽度 */
+        background-color: #ffffff;
+        color: white;
     }
+
+    .image {
+        width: 70%;
+        height:70%;
+        object-fit: center; /* 保证图片覆盖容器并保持比例 */
+    }
+
+    .hamburger {
+        top: 20px;  /* 上移汉堡菜单按钮，避免与其他内容重叠 */
+        left: 5px; /* 向左稍微调整，确保距离左边有间距 */
+        
+    }
+
+    .logo img {
+        width: 200px;  /* 调整 logo 的宽度 */
+        height: 70px; /* 调整 logo 的高度 */
+        object-fit: contain; /* 保持图片比例 */
+    }
+    
+    #menu-text {
+        position: fixed; /* 固定定位 */
+        top: 42px;
+        left: 70px;
+    }
+
+    /* 调整 hamburger 样式，确保其条纹和颜色适合小屏 */
+    .bar {
+        width: 80%;  /* 确保条纹不太大，适应小屏幕 */
+    }
+    .banner {
+        padding: 150px 10px; /* 控制高度，适应小屏幕 */
+        margin-top: -20px; /* 确保横条位置合适 */
+    }
+    .footer {
+        position: fixed;  /* 固定在页面底部 */
+        bottom: 20px;     /* 距离底部 20px */
+        left: 5px;       /* 距离左边 20px */
+        max-width: 200px;  /* 限制文本宽度以便于阅读 */
+    }
+
+  
 }
