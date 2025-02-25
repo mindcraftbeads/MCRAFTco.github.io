@@ -18,9 +18,9 @@ body, html {
 .bottom-banner {
     width: 100%;
     height: 60px;  /* 控制 banner 的高度 */
-    background-color: #f1f1f100;  /* 背景颜色 */
+    background-color: #312b2b00;  /* 背景颜色 */
     position: absolute;  /* 使用 fixed 固定在屏幕底部 */
-    bottom: -4730px;  /* 使它始终位于屏幕底部 */
+    bottom: -7500px;  /* 使它始终位于屏幕底部 */
     left: 0;  /* 确保它横跨页面底部 */
     z-index: 1000;  /* 确保它位于最上层 */
 }
@@ -114,11 +114,13 @@ body, html {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);  /* 每行显示 6 个项目 */
-    gap: 20px 20px;  /* 设置项目之间的间距 */
+    gap: 20px;  /* 设置项目之间的间距 */
     padding: 20px;
     margin-top: 340px;  /* 控制顶部与内容之间的间距 */
+    margin-bottom: -20px; 
     width: 97.6%;  /* 容器宽度设置为 100% */
     max-width: 100%;  /* 容器最大宽度为 100% */
+    grid-row-gap: 9%;
 }
 
 /* 每个 grid-item 项目 */
