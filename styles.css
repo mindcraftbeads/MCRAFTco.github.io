@@ -1,0 +1,320 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* 遮罩层样式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.852); /* 黑色半透明 */
+    display: none; /* 默认隐藏 */
+    z-index: 999; /* 确保遮罩层在其他内容之上 */
+}
+/* 激活遮罩层 */
+.overlay.open {
+    display: block; /* 显示遮罩层 */
+}
+
+.menu-container {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+.menu {
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.menu.active {
+    display: block;
+}
+
+.hamburger {
+    position: absolute; /* 让它绝对定位 */
+    top: 37px; /* 距离顶部 20px */
+    left: 130px; /* 距离左边 20px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 70%;
+    height: 1px; /* 调整为更小的值，变得更细 */
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+#menu-text {
+    color: #131313;
+    font-size: 20px;
+    font-weight: lighter;
+    position: absolute;
+    top: 49px; /* 垂直居中 */
+    left: 190px; /* 水平居中 */
+    transform: translate(-50%, -50%); /* 调整精确居中 */
+    cursor: pointer;
+    font-family: Courier, monospace ; 
+}
+
+.menu {
+    position: fixed; /* 固定定位 */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 350px; /* 这里调整宽度，原本是 250px，可以更改为你需要的宽度 */
+    background-color: #ffffff;
+    color: white;
+    transform: translateX(-350px); /* 根据新的宽度修改 */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px; /* 菜单的顶部间距 */
+    padding-left: 20px;
+}
+
+
+.menu.open {
+    transform: translateX(0); /* 打开时显示菜单 */
+}
+/* 选择你的菜单链接 */
+.menu a {
+    color: #131313; /* 设置字体颜色 */
+    text-decoration: none; /* 去掉默认下划线 */
+    font-size: 20px; /* 设置字体大小 */
+    margin: 15px 0; /* 控制每个链接之间的垂直间距 */
+    padding: 10px;
+    text-align: start; /* 链接文本居中对齐 */
+    font-family: 'Courier New', Courier, monospace; /* 字体样式 */
+    position: relative; /* 为了定位伪元素 */
+    padding-bottom: 5px; /* 给文字和下滑线之间留点空间 */
+    transition: color 0.3s ease; /* 设置字体颜色的平滑过渡 */
+}
+
+/* 使用 ::after 创建下滑线 */
+.menu a::after {
+    content: ""; /* 必须设置空内容 */
+    position: absolute; /* 绝对定位 */
+    left: 0;
+    bottom: 0;
+    width: 0%; /* 初始宽度为 0 */
+    height: 1px; /* 设置下划线的高度 */
+    background-color: #202020; /* 设置下滑线的颜色 */
+    transition: width 0.3s ease, opacity 0.3s ease; /* 平滑的过渡效果 */
+    opacity: 0; /* 初始为透明 */
+}
+
+/* 当鼠标悬停时，下滑线淡入并扩展 */
+.menu a:hover::after {
+    width: 30%; /* 下滑线的宽度扩展到 100% */
+    opacity: 1; /* 使下滑线完全可见 */
+}
+
+.menu a:hover {
+    color: #333; /* 可以设置字体颜色变化效果，选项可根据需要调整 */
+}
+
+.hamburger.open .bar1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar2 {
+    opacity: 0;
+}
+
+.hamburger.open .bar3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+/* 全屏背景图 */
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh + 60px); /* 增加额外的空间，确保 logo 不被遮挡 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 将 logo 向上对齐 */
+    text-align: center;
+    padding-top: 30px; /* 调整这个值来进一步控制 logo 上移的距离 */
+    overflow: hidden; /* 确保超出屏幕的内容不会显示 */
+}
+
+
+/* Logo 样式 */
+.logo {
+    text-align: center;
+    color: transparent;
+    z-index: 10;
+    position: relative;
+    margin-top: -48px; /* 通过负值来让 Logo 向上移动 */
+}
+
+.logo img {
+    width: 310px;  /* 调整 logo 的宽度 */
+    height: 110px; /* 调整 logo 的高度 */
+    object-fit: contain; /* 保持图片比例 */
+}
+
+/* 图片轮播容器 */
+.images {
+    position: absolute; /* 确保容器覆盖整个父容器 */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 确保容器宽度为视口宽度 */
+    height: 100vh; /* 确保容器高度为视口高度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* 确保图片轮播在 logo 下方 */
+}
+
+/* 每张图片 */
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 让图片按比例填充容器 */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1; /* 保证图片的 z-index 比 logo 低 */
+}
+
+/* 动画：轮播效果 */
+@keyframes imageSwitch {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
+    30% {
+        opacity: 1;
+        z-index: 1;
+    }
+    60% {
+        opacity: 0;
+        z-index: 0;
+    }
+    90% {
+        opacity: 0;
+        z-index: 0;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+/* 为每张图片设置不同的动画时间和延迟 */
+.image1 {
+    animation: imageSwitch 32s infinite 0s;  /* 动画持续时间加倍，变慢 */
+}
+
+.image2 {
+    animation: imageSwitch 32s infinite 4s;  /* 同样调整 */
+}
+
+.image3 {
+    animation: imageSwitch 32s infinite 8s;  /* 同样调整 */
+}
+
+.image4 {
+    animation: imageSwitch 32s infinite 12s;  /* 同样调整 */
+}
+
+/* 响应式调整：当屏幕宽度较小时，logo 大小适应调整 */
+@media screen and (max-width: 768px) {
+    .logo a {
+        font-size: 2rem;
+    }
+}
+
+/* 横条部分 */
+.banner {
+    background-image: url('your-image.jpg'); /* 替换为你想要的图片路径 */
+    background-size: cover; /* 背景图片覆盖整个容器 */
+    background-position: cover; /* 背景图片居中显示 */
+    padding: 500px 10px; /* 增加上下内边距，调整高度 */
+    text-align: cover;
+    margin-top: -30px; /* 保证横条与上方内容有间距 */
+    color: white; /* 确保横条内文字为白色，确保与图片背景有对比 */
+    max-width: auto; /* 控制横条的最大宽度，根据图片的大小调整 */
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto; /* 水平居中 */
+}
+
+/* 12 宫格布局 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 列 */
+    grid-template-rows: repeat(3, 1fr); /* 3 行 */
+    gap: 10px; /* 设置更小的间隙 */
+    padding: 20px; /* 容器内边距，确保不贴着屏幕边缘 */
+    margin: -25px auto; /* 保证居中显示，50px 为顶部间距 */
+    max-width: 1000px; /* 控制网格的最大宽度，可以根据需要调整 */
+    justify-items: center; /* 确保图片居中对齐 */
+    align-items: center; /* 确保图片在网格内垂直居中 */
+    background-color: #ffc44400; /* 设置背景颜色，例如浅灰色 */
+}
+
+/* 每个产品项的样式 */
+.product-item img {
+    width: 100%;
+    height: auto; /* 保持图片比例 */
+    object-fit: contain; /* 保持图片比例，裁剪不变形 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 可选：为图片添加阴影 */
+}
+
+/* Footer Content */
+.footer {
+    position: fixed;  /* 固定在页面底部 */
+    bottom: 5px;     /* 距离底部 20px */
+    left: 1560px;       /* 距离左边 20px */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;  /* 调整字体大小 */
+    color: #333;  /* 设置文本颜色 */
+    text-align: left;
+    max-width: 300px;  /* 限制文本宽度以便于阅读 */
+    word-wrap: break-word;  /* 确保长文本换行 */
+    z-index: 10;  /* 确保 footer 在其他内容之上 */
+}
+
+.circle-text {
+    font-weight: normal;
+    font-size: 1rem;  /* 略大的字体 */
+    margin-bottom: 10px;  /* 设置圆圈文本与下方文本的间距 */
+    letter-spacing: -0.9px; /* 缩小字母间距 */
+}
+
+/* 为了确保左下角的 footer 在页面底部 */
+body, .container {
+    height: 100%;  /* 让 body 或容器占满整个页面高度 */
+}
+
+/* 响应式设计：调整屏幕较小时的布局 */
+@media screen and (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 列 */
+        grid-template-rows: auto; /* 自动调整行高 */
+    }
+
+    .product-item img {
+        height: 200px; /* 控制图片高度 */
+    }
+}

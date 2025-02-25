@@ -1,0 +1,158 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+/* 类别名称文本的样式 */
+.category-name {
+    position: absolute;  /* 绝对定位 */
+    top: 300px;  /* 距离页面顶部的距离，可以根据需要调整 */
+    left: 10px;  /* 距离左边的距离，可以根据需要调整 */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);  /* 半透明背景，确保文字清晰可见 */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;  /* 确保文本显示在图片上方 */
+    font-weight: normal;
+}
+
+/* 空白的底部 banner */
+.bottom-banner {
+    width: 100%;       /* 占据全宽 */
+    height: 60px;     /* 设置空白区域的高度，根据需要调整 */
+    background-color: #f1f1f100; /* 可以设置一个背景色，如果需要透明背景，可以使用 rgba(0, 0, 0, 0) */
+    margin-top: 200px;  /* 可选，设置与上方内容的间距 */
+}
+
+.footer {
+    position: absolute;
+    bottom: -90px;
+    left: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #252525;
+    text-align: left;
+    max-width: 300px;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+.content {
+    position: absolute;
+    top: 70px;  /* 增加 top 的值，将整个内容区域向下移动 */
+    left: 20px;
+    text-align: left;
+    max-width: 800px;
+}
+
+.content h1,
+.content p {
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+    font-weight: normal;
+    margin-right: 30px;
+    margin-top: 80px;
+}
+
+.about-link {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 每行显示 5 个项目 */
+    grid-template-rows: 80px auto;  /* 第一排和第二排的高度为自动 */
+    gap: 10px;  /* 设置图片之间的间距 */
+    padding: 0 20px;
+    margin-top: 300px;  /* 顶部间距 */
+    width: 97.5%;  /* 确保容器宽度足够 */
+    grid-auto-rows: auto;  /* 自动调整行高 */
+}
+
+.grid-item {
+    position: relative;
+    width: 100%;
+    max-width: 360px;  /* 设置图片项的最大宽度 */
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;  /* 确保图片按比例显示 */
+}
+
+/* 第二张图片初始不可见 */
+.alt-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* 鼠标悬停时切换显示两张图片 */
+.grid-item:hover .main-img {
+    opacity: 0;
+}
+
+.grid-item:hover .alt-img {
+    opacity: 1;
+}
+
+/* 调整图片描述的位置 */
+.item-description {
+    font-size: 1rem;
+    text-align: start;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.circle-text {
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.9px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;  /* 当屏幕宽度小于 768px 时，显示两列 */
+    }
+
+    .grid-item {
+        max-width: 200px;
+    }
+}

@@ -1,0 +1,157 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/* 设置容器为 Flexbox 布局，确保图片横向排列 */
+.container {
+    display: flex;                /* 启用 Flexbox 布局 */
+    justify-content: space-around; /* 使项目均匀分布 */
+    flex-wrap: wrap;              /* 在需要时允许换行 */
+    gap: 20px;                    /* 设置图片间距 */
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 150px;  /* 增加 margin-top 来将图片区域下移 */
+    justify-items: center;
+    width: 80%;
+}
+
+/* 每个图片项 */
+.image-item {
+    width: 30%;  /* 设置图片宽度占据容器的 30% */
+    text-align: center;  /* 使图片和文字居中 */
+        position: relative;  /* Add relative positioning for positioning the text */
+        max-width: 250px; /* Set max width for each image */
+        height: auto;
+        padding: 0;  /* Remove padding to avoid extra space */
+        margin-top: 350px; 
+        border: none; /* Remove any border */
+        box-shadow: none; /* Remove any shadow */
+    }
+    
+
+/* 图片样式 */
+.image-item img {
+    width: 100%;  /* 图片宽度填充容器 */
+    height: auto; /* 保持图片比例 */
+    transition: transform 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* 鼠标悬浮时，图片放大 */
+.image-item:hover img {
+    transform: scale(1.1);  /* 将图片放大10% */
+}
+
+/* 更改 logo 大小 */
+.logo img {
+    width: 100px;  /* 增大 logo 的大小 */
+}
+
+/* 更改 logo 位置 */
+.logo {
+    position: absolute;
+    top: 3px;  /* 更改距离顶部的距离 */
+    left: 20px; /* 更改距离左边的距离 */
+}
+
+.content {
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    text-align: left;
+    max-width: 800px;
+}
+
+.content h1,
+ .content p {
+    font-family: 'Courier New', Courier, monospace;  
+    display: inline-block; /* 使 h1 和 p 并排显示 */
+    font-size: 2rem;
+    color: #333;
+    font-size: 1rem;  /* 字体大小 */
+    font-weight: normal;  /* 设置字体为正常粗细，去除加粗 */
+    margin-right: 30px;  /* 适当的间距 */
+    color: #333;
+}
+
+.content p {
+    font-size: 1rem;
+}
+
+/* ABOUT link in the top-right corner */
+.about-link {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;  
+}
+
+.about-link:hover {
+    color: #007aff;  /* Change color on hover */
+}
+
+/* Add text to the bottom left corner of the image */
+.item-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem; /* Adjust the font size */
+    color: black; /* Set the text color to black */
+    padding: 5px; /* Optional: Add padding around the text */
+    /* Removed border and border-radius */
+}
+
+/* Footer Content */
+.footer {
+    position: absolute;
+    bottom: -220px;
+    left: -1285px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.3rem;  /* Adjust font size */
+    color: #333;  /* Set text color */
+    text-align: left;
+    max-width: 2000px;  /* Limit text width for readability */
+    word-wrap: break-word; /* Ensure long text breaks into new lines */
+}
+
+.circle-text {
+    font-weight: normal;
+    font-size: 1rem;  /* Slightly larger font size for the circle text */
+    margin-bottom: 3px;  /* Space between the circle text and the next paragraph */
+    letter-spacing: -1.6px; /* Reduce the space between letters */
+}
+
+.acknowledgement {
+    font-size: 0.8rem;  /* Smaller font size for the paragraph */
+    line-height: 1.5;  /* Increase line height for better readability */
+    margin-bottom: 10px;  /* Space between paragraphs */
+    letter-spacing: -0.6px; /* Reduce the space between letters */
+}
+
+/* Ensure text wraps correctly within the footer */
+.footer .acknowledgement {
+    white-space: normal; /* Allow text to wrap */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .images {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .image-item {
+        max-width: 200px; /* Slightly smaller images on smaller screens */
+    }
+}
