@@ -15,16 +15,6 @@ body, html {
     flex-direction: column;
 }
 
-.bottom-banner {
-    width: 100%;
-    height: 60px;  /* 控制 banner 的高度 */
-    background-color: #312b2b00;  /* 背景颜色 */
-    position: absolute;  /* 使用 fixed 固定在屏幕底部 */
-    bottom: -7500px;  /* 使它始终位于屏幕底部 */
-    left: 0;  /* 确保它横跨页面底部 */
-    z-index: 1000;  /* 确保它位于最上层 */
-}
-
 .logo img {
     width: 100px;
 }
@@ -53,8 +43,8 @@ body, html {
 
 /* 确保 footer 在最左下角 */
 .footer {
-    position: fixed;
-    bottom: 10px;
+    position: absolute;
+    bottom: -7000px;
     left: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -216,5 +206,18 @@ body, html {
     .grid-item {
         max-width: 200px;  /* 每个项目的最大宽度 */
         text-align: start;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 581px;
+        left: 300px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        color: #252525;
+        text-align: left;
+        max-width: 300px;
+        word-wrap: break-word;
+        z-index: 1000;  /* 确保 footer 在最上层 */
     }
 }
