@@ -97,10 +97,6 @@ body, html {
     font-family: 'Courier New', Courier, monospace;  
 }
 
-.about-link:hover {
-    color: #007aff;  /* Change color on hover */
-}
-
 /* Add text to the bottom left corner of the image */
 .item-name {
     position: absolute;
