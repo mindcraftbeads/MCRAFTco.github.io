@@ -38,6 +38,7 @@ body, html {
     border-radius: 5px;
     z-index: 10;  /* 确保文本显示在图片上方 */
     font-weight: normal;
+    z-index: 10;
 }
 
 /* 空白的底部 banner */
@@ -45,12 +46,12 @@ body, html {
     width: 100%;       /* 占据全宽 */
     height: 60px;     /* 设置空白区域的高度，根据需要调整 */
     background-color: #f1f1f100; /* 可以设置一个背景色，如果需要透明背景，可以使用 rgba(0, 0, 0, 0) */
-    margin-top: 200px;  /* 可选，设置与上方内容的间距 */
+    margin-top: 100px;  /* 可选，设置与上方内容的间距 */
 }
 
 .footer {
     position: absolute;
-    bottom: -90px;
+    bottom: -420px;
     left: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -67,6 +68,7 @@ body, html {
     left: 20px;
     text-align: left;
     max-width: 800px;
+    z-index:10;
 }
 
 .content h1,
@@ -96,9 +98,11 @@ body, html {
     grid-template-columns: repeat(5, 1fr);  /* 每行显示 5 个项目 */
     gap: 20px 20px;  /* 设置项目之间的间距 */
     padding: 20px;
-    margin-top: 300px;  /* 顶部间距 */
+    margin-top: 280px;  /* 顶部间距 */
     width: 97.5%;  /* 确保容器宽度足够 */
     max-width: 100%;  /* 容器最大宽度为 100% */
+    grid-row-gap: 5%;
+    z-index: 1;
 }
 
 .grid-item {
@@ -162,6 +166,12 @@ body, html {
         bottom: -35px;
         left: 0px;
         color: rgb(20, 20, 20);
+    }
+    .content {
+        top: 40px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
+        left: 20px;
+        text-align: start;  /* 在小屏幕上居中显示文本 */
+        width: 90%;  /* 容器宽度调整为 90%，避免过于拥挤 */
     }
 
     .footer {
