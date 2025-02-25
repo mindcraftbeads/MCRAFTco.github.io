@@ -10,6 +10,8 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
 /* 遮罩层样式 */
 .overlay {
     position: fixed;
@@ -306,6 +308,7 @@ body {
 body, .container {
     height: 100%;  /* 让 body 或容器占满整个页面高度 */
 }
+
 
 /* 响应式设计：调整屏幕较小时的布局 */
 @media screen and (max-width: 768px) {
