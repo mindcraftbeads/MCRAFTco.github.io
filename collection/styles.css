@@ -154,4 +154,31 @@ body, html {
     .image-item {
         max-width: 200px; /* Slightly smaller images on smaller screens */
     }
+    .item-name {
+        position: absolute;
+        top: 170px;
+        font-size: 0.8rem; /* Adjust the font size */
+    }
+    .about-link {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+        .circle-text {
+            position: relative;  /* 相对定位，方便调整位置 */
+            top: 170px;           /* 向下移动 20px */
+            left: 1000px;          /* 向右移动 10px */
+            font-size: 1rem;     /* 调整字体大小 */
+            letter-spacing: -0.5px; /* 缩小字母之间的间距 */
+        }
+    
+        /* 修改 acknowledgement 的位置 */
+        .acknowledgement {
+            position: relative;  /* 相对定位 */
+            top: 170px;           /* 向下移动 10px */
+            left: 1000px;          /* 向右移动 15px */
+            font-size: 0.9rem;   /* 调整字体大小 */
+            line-height: 1.4;    /* 调整行高 */
+            max-width: 360px;
+        }
+    }
 }
