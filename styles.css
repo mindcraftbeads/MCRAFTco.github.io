@@ -72,7 +72,7 @@ body {
     font-weight: lighter;
     position: absolute;
     top: 49px; /* 垂直居中 */
-    left: 70px; /* 水平居中 */
+    left: 75px; /* 水平居中 */
     transform: translate(-50%, -50%); /* 调整精确居中 */
     cursor: pointer;
     font-family: Courier, monospace ; 
@@ -337,9 +337,9 @@ body, .container {
     }
     
     #menu-text {
-        position: fixed; /* 固定定位 */
-        top: 42px;
-        left: 70px;
+        position: absolute; /* 固定定位 */
+        top: 32px;
+        left: 65px;
     }
 
     /* 调整 hamburger 样式，确保其条纹和颜色适合小屏 */
