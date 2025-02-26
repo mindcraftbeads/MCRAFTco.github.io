@@ -342,7 +342,7 @@ body, .container {
 
     .logo img {
         width: 200px;  /* 调整 logo 的宽度 */
-        height: 70px; /* 调整 logo 的高度 */
+        height: 67px; /* 调整 logo 的高度 */
         object-fit: contain; /* 保持图片比例 */
     }
     
