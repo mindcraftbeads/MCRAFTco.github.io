@@ -22,7 +22,7 @@ body, html {
 .logo {
     position: absolute;
     top: 5px;
-    left: 20px;
+    left: 16px;
 }
 
 /* 类别名称文本的样式 */
@@ -57,7 +57,7 @@ body, html {
 .content {
     position: absolute;
     top: 46px;  /* 增加 top 的值，将整个内容区域向下移动 */
-    left: 20px;
+    left: 24px;
     text-align: left;
     max-width: 800px;
     z-index:10;
@@ -138,6 +138,12 @@ body, html {
         width: 91%;  /* 使用 100% 宽度 */
         margin-bottom: -20px; 
         grid-row-gap: 10%;  /* 控制垂直行之间的间距 */
+    }
+
+    .logo {
+        position: absolute;
+        top: 5px;
+        left: 13px;
     }
 
     .item-description {
