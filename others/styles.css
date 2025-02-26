@@ -22,7 +22,7 @@ body, html {
 .logo {
     position: absolute;
     top: 5px;
-    left: 20px;
+    left: 16px;
 }
 
 /* 类别名称文本的样式 */
@@ -38,19 +38,12 @@ body, html {
     border-radius: 5px;
     z-index: 10;  /* 确保文本显示在图片上方 */
     font-weight: normal;
-}
-
-/* 空白的底部 banner */
-.bottom-banner {
-    width: 100%;       /* 占据全宽 */
-    height: 60px;     /* 设置空白区域的高度，根据需要调整 */
-    background-color: #f1f1f100; /* 可以设置一个背景色，如果需要透明背景，可以使用 rgba(0, 0, 0, 0) */
-    margin-top: 200px;  /* 可选，设置与上方内容的间距 */
+    z-index: 10;
 }
 
 .footer {
     position: absolute;
-    bottom: -90px;
+    bottom: -200px;
     left: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -63,10 +56,11 @@ body, html {
 
 .content {
     position: absolute;
-    top: 70px;  /* 增加 top 的值，将整个内容区域向下移动 */
-    left: 20px;
+    top: 46px;  /* 增加 top 的值，将整个内容区域向下移动 */
+    left: 24px;
     text-align: left;
     max-width: 800px;
+    z-index:10;
 }
 
 .content h1,
@@ -80,26 +74,16 @@ body, html {
     margin-top: 80px;
 }
 
-.about-link {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #333;
-    font-weight: normal;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);  /* 每行显示 5 个项目 */
-    grid-template-rows: 80px auto;  /* 第一排和第二排的高度为自动 */
-    gap: 10px;  /* 设置图片之间的间距 */
-    padding: 0 20px;
-    margin-top: 300px;  /* 顶部间距 */
+    gap: 10px 20px;  /* 设置项目之间的间距 */
+    padding: 20px;
+    margin-top: 200px;  /* 顶部间距 */
     width: 97.5%;  /* 确保容器宽度足够 */
-    grid-auto-rows: auto;  /* 自动调整行高 */
+    max-width: 100%;  /* 容器最大宽度为 100% */
+    grid-row-gap: 20px;
+    z-index: 1;
 }
 
 .grid-item {
@@ -149,10 +133,53 @@ body, html {
 
 @media screen and (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr 1fr;  /* 当屏幕宽度小于 768px 时，显示两列 */
+        grid-template-columns: repeat(1, 1fr);  /* 每行显示 1 个项目 */
+        gap: 20px;
+        width: 91%;  /* 使用 100% 宽度 */
+        margin-bottom: -20px; 
+        grid-row-gap: 10%;  /* 控制垂直行之间的间距 */
+    }
+
+    .logo {
+        position: absolute;
+        top: 5px;
+        left: 13px;
+    }
+
+    .item-description {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        position: absolute;
+        bottom: -35px;
+        left: 0px;
+        color: rgb(20, 20, 20);
+    }
+    .content {
+        top: 10px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
+        left: 20px;
+        text-align: start;  /* 在小屏幕上居中显示文本 */
+        width: 90%;  /* 容器宽度调整为 90%，避免过于拥挤 */
+    }
+
+    .content p {
+        margin-top: 35px;  /* 调整 p 上方的间距 */
+    }
+
+    .footer {
+        position: absolute;
+        bottom: -2800px;
+        left: 25px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        color: #252525;
+        text-align: left;
+        max-width: 300px;
+        word-wrap: break-word;
+        z-index: 1000;
     }
 
     .grid-item {
-        max-width: 200px;
+        max-width: 100%;  /* 确保每个项不会被压缩 */
+        text-align: start;
     }
 }
