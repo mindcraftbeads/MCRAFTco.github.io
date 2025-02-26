@@ -13,6 +13,7 @@ body, html {
     height: auto;
     position: relative;
     flex-direction: column;
+    padding-bottom: 0;  /* 确保没有额外的底部填充 */
 }
 
 .logo img {
@@ -117,53 +118,49 @@ body, html {
 
 @media screen and (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(1, 1fr);  /* 每行显示 1 个项目 */
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
-        width: 91%;  /* 使用 100% 宽度 */
-        margin-bottom: -20px; 
-        grid-row-gap: 10%;  /* 控制垂直行之间的间距 */
+        width: 86%;
+        grid-row-gap: 20px;  /* 固定行间距 */
+        padding-bottom: 50px;  /* 增加底部空间 */
     }
 
-    .logo {
-        position: absolute;
-        top: 5px;
-        left: 13px;
-    }
-
-    .item-description {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.8rem;
-        position: absolute;
-        bottom: -35px;
-        left: 0px;
-        color: rgb(20, 20, 20);
-    }
-    .content {
-        top: 10px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
-        left: 20px;
-        text-align: start;  /* 在小屏幕上居中显示文本 */
-        width: 90%;  /* 容器宽度调整为 90%，避免过于拥挤 */
-    }
-
-    .content p {
-        margin-top: 35px;  /* 调整 p 上方的间距 */
-    }
-
-    .footer {
-        position: absolute;
-        bottom: -2800px;
-        left: 25px;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.8rem;
-        color: #252525;
-        text-align: left;
-        max-width: 300px;
-        word-wrap: break-word;
-        z-index: 1000;
+    .image-container img {
+        height: 500px;  /* 减小图片高度 */
     }
 
     .grid-item {
-        max-width: 100%;  /* 确保每个项不会被压缩 */
+        max-width: 100%;
         text-align: start;
+    }
+
+    .item-description {
+        position: relative;  /* 改为相对定位 */
+        margin-top: 10px;  /* 与图片分开 */
+        bottom: auto;
+        font-size: 0.8rem;
+    }
+
+    .content {
+        top: 10px;
+        left: 20px;
+        text-align: start;
+        width: 90%;
+    }
+
+    .content p {
+        margin-top: 35px;
+    }
+
+    .footer {
+        position: relative;  /* 改为相对定位 */
+        bottom: auto;  /* 放在内容下方 */
+        left: 25px;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        top: 5px;
+        left: 13px;
     }
 }
