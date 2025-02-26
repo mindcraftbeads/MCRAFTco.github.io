@@ -1,0 +1,109 @@
+/* General styles for the page */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #eaeaea;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.logo {
+    position: absolute;
+    top: -10px;
+    left: 730px;
+    z-index: 100; 
+}
+
+
+.contact-us {
+    padding: 20px;
+    margin-top: 50px;  /* 确保整体容器下移 */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #252525;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: #ffffff00;
+    font-weight: normal;  /* 将 CONTACT US 字体加粗 */
+    z-index: 1;
+}
+
+/* Alternatively, use padding-top to move content and container together */
+.contact-us {
+    padding-top: 800px;  /* 增加 padding-top 让框和内容一起下移 */
+    margin-left: 480px;
+}
+
+/* Table styles */
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table cell styles */
+.footer-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* 右侧图片 */
+.left {
+    flex: 1;
+}
+
+.left img {
+    position: relative;  /* 或 absolute */
+    top: -790px;  /* 使图片上移 */
+    margin-left: 510px;
+    width: 35%;
+    height: auto; /* 保持图片的比例 */
+}
+
+.footer-table td:first-child {
+    font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+  /* Alternatively, use padding-top to move content and container together */
+  .contact-us {
+    padding: 20px;
+    margin-top: 50px;  /* 确保整体容器下移 */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    color: #252525;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: #ffffff00;
+    font-weight: normal;  /* 将 CONTACT US 字体加粗 */
+    z-index: 1;
+}
+.contact-us {
+    padding-top: 470px;  /* 增加 padding-top 让框和内容一起下移 */
+    margin-left: 80px;
+}
+
+.logo {
+    position: absolute;
+    top: -10px;
+    left: 155px;
+}
+
+
+    .left {
+        flex: 1;
+    }
+    
+    .left img {
+        margin-top: 345px;
+        margin-left: 128px;
+        width: 48%;
+        height: auto; 
+    }
+}
