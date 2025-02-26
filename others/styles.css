@@ -25,25 +25,9 @@ body, html {
     left: 16px;
 }
 
-/* 类别名称文本的样式 */
-.category-name {
-    position: absolute;  /* 绝对定位 */
-    top: 300px;  /* 距离页面顶部的距离，可以根据需要调整 */
-    left: 10px;  /* 距离左边的距离，可以根据需要调整 */
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);  /* 半透明背景，确保文字清晰可见 */
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10;  /* 确保文本显示在图片上方 */
-    font-weight: normal;
-    z-index: 10;
-}
-
 .footer {
     position: absolute;
-    bottom: -200px;
+    bottom: -740px;
     left: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -95,8 +79,8 @@ body, html {
 
 .image-container img {
     width: 100%;
-    height: auto;
-    object-fit: cover;  /* 确保图片按比例显示 */
+    height: 500px;  /* 设置固定高度，例如200px */
+    object-fit: cover;  /* 保持裁剪以填充容器 */
 }
 
 /* 第二张图片初始不可见 */
