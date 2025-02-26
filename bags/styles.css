@@ -74,17 +74,6 @@ body, html {
     margin-top: 80px;
 }
 
-.about-link {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #333;
-    font-weight: normal;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);  /* 每行显示 5 个项目 */
@@ -160,10 +149,14 @@ body, html {
         color: rgb(20, 20, 20);
     }
     .content {
-        top: 40px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
+        top: 10px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
         left: 20px;
         text-align: start;  /* 在小屏幕上居中显示文本 */
         width: 90%;  /* 容器宽度调整为 90%，避免过于拥挤 */
+    }
+
+    .content p {
+        margin-top: 35px;  /* 调整 p 上方的间距 */
     }
 
     .footer {

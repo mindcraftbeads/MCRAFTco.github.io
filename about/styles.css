@@ -1,0 +1,125 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+
+/* 右侧图片 */
+.left {
+    flex: 1;
+}
+
+.left img {
+    margin-top: 160px;
+    margin-left: 950px;
+    width: 25%;
+    height: auto; /* 保持图片的比例 */
+}
+
+.footer {
+    position: absolute;
+    top: 900px; /* 减小 top 的值，让 footer 更接近页面底部 */
+    left: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #252525;
+    text-align: left;
+    max-width: 300px;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+.content {
+    position: absolute;
+    top: 260px;  /* 增加 top 的值，将整个内容区域向下移动 */
+    left: 22px;  /* 调整 left 的值，将内容向右移动 */
+    text-align: left;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.content h1,
+.content p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #333;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    line-height: 1.5;  /* 增加行间距 */
+    word-wrap: break-word;  /* 强制长单词换行 */
+    max-width: 500px;  /* 限制最大宽度 */
+    width: 100%;  /* 保证文本不会超出容器 */
+    margin-left: auto;
+    margin-right: auto;  /* 居中对齐 */
+}
+
+.circle-text {
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.9px;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        top: 40px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
+        left: 20px;
+        text-align: start;  /* 在小屏幕上居中显示文本 */
+        width: 90%;  /* 容器宽度调整为 90%，避免过于拥挤 */
+    }
+
+    .footer {
+        position: absolute;
+        top: 900px; /* 减小 top 的值，让 footer 更接近页面底部 */
+        left: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        color: #252525;
+        text-align: left;
+        max-width: 300px;
+        word-wrap: break-word;
+        z-index: 1000;
+    }
+
+.logo {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+}
+
+
+    .left {
+        flex: 1;
+    }
+    
+    .left img {
+        margin-top: 530px;
+        margin-left: 110px;
+        width: 48%;
+        height: auto; /* 保持图片的比例 */
+    }
+}
