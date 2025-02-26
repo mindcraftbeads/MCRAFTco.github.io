@@ -69,13 +69,13 @@ body {
 #menu-text {
     color: #131313;
     font-size: 20px;
-    font-weight: lighter;
+    font-weight: normal;
     position: absolute;
-    top: 49px; /* 垂直居中 */
+    top: 50px; /* 垂直居中 */
     left: 75px; /* 水平居中 */
     transform: translate(-50%, -50%); /* 调整精确居中 */
     cursor: pointer;
-    font-family: Courier, monospace ; 
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .menu {
@@ -348,8 +348,8 @@ body, .container {
     
     #menu-text {
         position: absolute; /* 固定定位 */
-        top: 32px;
-        left: 65px;
+        top: 33px;
+        left: 59px;
     }
 
     /* 调整 hamburger 样式，确保其条纹和颜色适合小屏 */
