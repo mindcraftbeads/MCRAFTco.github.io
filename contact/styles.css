@@ -85,14 +85,14 @@ body {
     z-index: 1;
 }
 .contact-us {
-    padding-top: 470px;  /* 增加 padding-top 让框和内容一起下移 */
-    margin-left: 80px;
+    padding-top: 420px;  /* 增加 padding-top 让框和内容一起下移 */
+    margin-left: 20px;
 }
 
 .logo {
     position: absolute;
     top: -10px;
-    left: 155px;
+    left: 140px;
 }
 
 
@@ -101,8 +101,8 @@ body {
     }
     
     .left img {
-        margin-top: 345px;
-        margin-left: 128px;
+        margin-top: 400px;
+        margin-left: 113px;
         width: 48%;
         height: auto; 
     }
