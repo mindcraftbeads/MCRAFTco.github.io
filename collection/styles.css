@@ -6,12 +6,14 @@ body, html {
     background-color: #ffffff;
 }
 
-/* 设置容器为 Flexbox 布局，确保图片横向排列 */
 .container {
-    display: flex;                /* 启用 Flexbox 布局 */
-    justify-content: space-around; /* 使项目均匀分布 */
-    flex-wrap: wrap;              /* 在需要时允许换行 */
-    gap: 20px;                    /* 设置图片间距 */
+    display: flex;
+    justify-content: space-evenly; /* 均勻分佈，最大化邊緣間距 */
+    flex-wrap: wrap; /* 如果螢幕太小，允許換行 */
+    gap: 40px; /* 增加間距，根據需要調整 */
+    width: 100%; /* 確保容器佔滿頁面寬度 */
+    padding: 0 20px; /* 可選：左右內邊距，避免圖片貼邊 */
+    box-sizing: border-box; /* 確保 padding 不影響寬度 */
 }
 
 .images {
@@ -36,7 +38,6 @@ body, html {
         box-shadow: none; /* Remove any shadow */
     }
     
-
 /* 图片样式 */
 .image-item img {
     width: 100%;  /* 图片宽度填充容器 */
@@ -85,18 +86,6 @@ body, html {
     font-size: 1rem;
 }
 
-/* ABOUT link in the top-right corner */
-.about-link {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #333;
-    font-weight: normal;
-    font-family: 'Courier New', Courier, monospace;  
-}
-
 /* Add text to the bottom left corner of the image */
 .item-name {
     position: absolute;
@@ -107,6 +96,58 @@ body, html {
     color: black; /* Set the text color to black */
     padding: 5px; /* Optional: Add padding around the text */
     /* Removed border and border-radius */
+}
+
+/* 选项容器 */
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 31%;
+    z-index: 999;
+    display: none; /* 默认隐藏 */
+}
+
+/* 单个选项项 */
+.option-item {
+    background-color: #eeeeee00;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
+    margin-bottom: 10px; /* 选项之间的间距 */
+    transform: scaleY(0); /* 默认折叠状态 */
+    transform-origin: top; /* 从顶部展开 */
+    opacity: 0; /* 默认透明 */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 动画效果 */
+}
+
+.option-item a {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.beads-item img {
+    position: relative;
+    top: 80px; /* 向下移動 20px */
+    left: -20px;
+}
+
+.option-item a:hover {
+    background-color: #ddd;
+}
+
+/* 显示时的动画状态 */
+.options.active .option-item {
+    transform: scaleY(1); /* 展开 */
+    opacity: 1; /* 完全可见 */
+}
+
+/* 为第二个选项添加延迟 */
+.options.active .option-item:nth-child(2) {
+    transition-delay: 0.1s; /* 第二个选项延迟展开 */
 }
 
 /* Footer Content */
@@ -127,6 +168,7 @@ body, html {
     font-size: 1rem;  /* Slightly larger font size for the circle text */
     margin-bottom: 3px;  /* Space between the circle text and the next paragraph */
     letter-spacing: -1.6px; /* Reduce the space between letters */
+    margin-left: 75px;   
 }
 
 .acknowledgement {
@@ -134,6 +176,7 @@ body, html {
     line-height: 1.5;  /* Increase line height for better readability */
     margin-bottom: 10px;  /* Space between paragraphs */
     letter-spacing: -0.6px; /* Reduce the space between letters */
+    margin-left: 75px;   
 }
 
 /* Ensure text wraps correctly within the footer */

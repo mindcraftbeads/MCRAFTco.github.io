@@ -22,19 +22,25 @@
             <p>MODERN DESIGN</p>
         </div>
 
-    <!-- Beads -->
-<div class="image-item">
-    <a href="../beads/index.html"> <!-- 确保标签是闭合的 -->
-        <img src="beads.png" alt="Beads">
-        <div class="item-name">Beads</div>
-    </a>  <!-- 关闭链接标签 -->
-</div>
-        
+        <div class="container">
+            <!-- Beads 图片和选项 -->
+            <div class="image-item beads-item">
+                <img src="beads.png" alt="Beads" onclick="toggleOptions()">
+                <div class="item-name">BEADS</div>
+                <div class="options" id="beads-options">
+                    <div class="option-item">
+                        <a href="../beads/index.html">WOODEN 木製</a>
+                    </div>
+                    <div class="option-item">
+                        <a href="../stone-crystal/index.html">STONE 石製</a>
+                    </div>
+                </div>
+            </div>
             <!-- Bags -->
             <div class="image-item">
                 <a href="../bags/index.html"> <!-- 确保标签是闭合的 -->
                 <img src="bead-bag.png" alt="Bags">
-                <div class="item-name">Bags</div>
+                <div class="item-name">BAGS</div>
             </a>  <!-- 关闭链接标签 -->
             </div>
         
@@ -42,7 +48,7 @@
             <div class="image-item">
                 <a href="../others/index.html"> <!-- 确保标签是闭合的 -->
                 <img src="general-buddhist-items.png" alt="Others">
-                <div class="item-name">Others</div>
+                <div class="item-name">OTHERS</div>
             </a>  <!-- 关闭链接标签 -->
                 <!-- Footer Content -->
 <div class="footer">
@@ -51,5 +57,9 @@
         We respectfully acknowledge the wisdom and teachings of the Buddha and the countless practitioners who have preserved and passed on this sacred tradition. We honor the spiritual path followed by those who came before us, and strive to uphold these values in our work today.
     </div>
 </div>
+</div>
+
+        <!-- 引用 JavaScript 文件 -->
+        <script src="script.js"></script>
 </body>
 </html>
