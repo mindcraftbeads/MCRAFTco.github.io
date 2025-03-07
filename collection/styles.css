@@ -125,7 +125,7 @@ body, html {
     padding: 8px 10px;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
-    color: #333;
+    color: #3d0303;
     font-size: 0.9rem;
 }
 
@@ -201,20 +201,67 @@ body, html {
     .about-link {
         font-size: 1rem;
     }
+
+    .beads-item img {
+        position: relative;
+        top: 50px; /* 向下移動 20px */
+        left: -20px;
+    }
+
+    .options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 58%;
+        z-index: 999;
+        display: none; /* 默认隐藏 */
+    }
+    
+    .options {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        z-index: 999;
+        display: none; /* 默认隐藏 */
+    }
+    
+
     @media screen and (max-width: 768px) {
         .circle-text {
             position: relative;  /* 相对定位，方便调整位置 */
-            top: 170px;           /* 向下移动 20px */
-            left: 1000px;          /* 向右移动 10px */
+            top: 190px;           /* 向下移动 20px */
+            left: 905px;          /* 向右移动 10px */
             font-size: 1rem;     /* 调整字体大小 */
             letter-spacing: -0.5px; /* 缩小字母之间的间距 */
         }
-    
+
+        .container {
+            display: flex;
+            justify-content: space-between; /* 均勻分佈，最大化邊緣間距 */
+            flex-wrap: wrap; /* 如果螢幕太小，允許換行 */
+            gap: 10px; /* 增加間距，根據需要調整 */
+            width: 110%; /* 確保容器佔滿頁面寬度 */
+            padding: 0 20px; /* 可選：左右內邊距，避免圖片貼邊 */
+            box-sizing: border-box; /* 確保 padding 不影響寬度 */
+        }
+        .option-item a {
+            display: block;
+            padding: 8px 10px;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            color: #751212;
+            font-size: 0.8rem;
+        }
+
+        .option-item {
+            background-color: #8c8a8a1a;
+        }
+
         /* 修改 acknowledgement 的位置 */
         .acknowledgement {
             position: relative;  /* 相对定位 */
-            top: 170px;           /* 向下移动 10px */
-            left: 1000px;          /* 向右移动 15px */
+            top: 190px;           /* 向下移动 10px */
+            left: 905px;          /* 向右移动 15px */
             font-size: 0.9rem;   /* 调整字体大小 */
             line-height: 1.4;    /* 调整行高 */
             max-width: 360px;
