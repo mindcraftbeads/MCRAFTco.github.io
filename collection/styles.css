@@ -75,7 +75,7 @@ body, html {
     font-family: 'Courier New', Courier, monospace;  
     display: inline-block; /* 使 h1 和 p 并排显示 */
     font-size: 2rem;
-    color: #333;
+    color: #161616;
     font-size: 1rem;  /* 字体大小 */
     font-weight: normal;  /* 设置字体为正常粗细，去除加粗 */
     margin-right: 30px;  /* 适当的间距 */
@@ -98,14 +98,21 @@ body, html {
     /* Removed border and border-radius */
 }
 
-/* 选项容器 */
+/* 选项容器：覆盖整个图片区域并水平垂直居中显示 */
 .options {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 31%;
-    z-index: 999;
-    display: none; /* 默认隐藏 */
+    top: 10%;
+    left: -10.5%;
+    width: 105%;      /* 调整面板宽度，如需更大或更小，可修改为 70%、90% 等 */
+    height: 95%;     /* 调整面板高度，如需更高或更矮，可修改为 50%、70% 等 */
+    padding: 20px;   /* 内边距，增加面板内容与边缘的距离 */
+    box-sizing: border-box;
+    background-color: rgb(173, 174, 160);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
 }
 
 /* 单个选项项 */
@@ -113,7 +120,7 @@ body, html {
     background-color: #eeeeee00;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
-    margin-bottom: 10px; /* 选项之间的间距 */
+    margin: 12px 0; /* 选项之间的间距更大 */
     transform: scaleY(0); /* 默认折叠状态 */
     transform-origin: top; /* 从顶部展开 */
     opacity: 0; /* 默认透明 */
@@ -122,11 +129,12 @@ body, html {
 
 .option-item a {
     display: block;
-    padding: 8px 10px;
+    padding: 12px 16px;     /* 增加内边距让点击区域更大 */
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
-    color: #3d0303;
-    font-size: 0.9rem;
+    color: #444444;
+    font-size: 1.1rem;       /* 调整字体大小，如需更大可改为 1.2rem、1.3rem 等 */
+    text-align: center;      /* 文本居中 */
 }
 
 .beads-item img {
@@ -136,10 +144,15 @@ body, html {
 }
 
 .option-item a:hover {
-    background-color: #ddd;
+    background-color: #e9d8c3;
+    left: -10%;
+    width: 99%;
 }
 
 /* 显示时的动画状态 */
+.options.active {
+    display: flex;
+}
 .options.active .option-item {
     transform: scaleY(1); /* 展开 */
     opacity: 1; /* 完全可见 */
@@ -208,22 +221,22 @@ body, html {
         left: -20px;
     }
 
-    .options {
+    /* .options { ... } 移除或注释以避免重复定义 */
+    /* .options {
         position: absolute;
         top: 100%;
         left: 0;
         width: 58%;
         z-index: 999;
-        display: none; /* 默认隐藏 */
+        display: none;
     }
-    
     .options {
         position: absolute;
         top: 120%;
         left: 0;
         z-index: 999;
-        display: none; /* 默认隐藏 */
-    }
+        display: none;
+    } */
     
 
     @media screen and (max-width: 768px) {
