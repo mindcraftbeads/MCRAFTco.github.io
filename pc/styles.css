@@ -1,0 +1,220 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    z-index: 100; 
+}
+
+/* 类别名称文本的样式 */
+.category-name {
+    position: relative;  /* 绝对定位 */
+    top: 220px;  /* 距离页面顶部的距离，可以根据需要调整 */
+    left: 10px;  /* 距离左边的距离，可以根据需要调整 */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);  /* 半透明背景，确保文字清晰可见 */
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: normal;
+    z-index: 10;  /* 确保文本显示在图片上方 */
+}
+
+/* 确保 footer 在最左下角 */
+.footer {
+    position: absolute;
+    bottom: -6100px;
+    left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #252525;
+    text-align: left;
+    max-width: 300px;
+    word-wrap: break-word;
+    z-index: 1000;  /* 确保 footer 在最上层 */
+}
+
+.content {
+    position: absolute;
+    top: 70px;  /* 增加 top 的值，将整个内容区域向下移动 */
+    left: 20px;
+    text-align: left;
+    max-width: 70%;
+    z-index: 10; 
+}
+
+.content h1,
+.content p {
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    font-size: 1rem;
+    color: #333;
+    font-weight: normal;
+    margin-right: 30px;
+    margin-top: 67px;
+}
+
+/* Wooden Beads 链接样式 */
+.wooden-beads-link {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.wooden-beads-link:hover {
+    color: #c91400;
+}
+
+/* 6个项目排成一行 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);  /* 每行显示 6 个项目 */
+    gap: 10px 20px;  /* 设置项目之间的间距 */
+    padding: 20px;
+    margin-top: 200px;  /* 控制顶部与内容之间的间距 */
+    margin-bottom: -20px; 
+    width: 97.6%;  /* 容器宽度设置为 100% */
+    max-width: 100%;  /* 容器最大宽度为 100% */
+    grid-row-gap: 20px;
+    z-index: 1;
+}
+
+/* 每个 grid-item 项目 */
+.grid-item {
+    position: relative;
+    text-align: center;
+    width: 100%;  /* 确保每个项目占据一份宽度 */
+}
+
+
+/* 图片容器，设置高度并保持长方形 */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;  /* 固定高度，保持长方形 */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;  /* 保证图片宽度填满容器 */
+    height: 100%;  /* 保证图片高度填满容器 */
+    object-fit: cover;  /* 保证图片填充容器并保持比例 */
+    transition: opacity 0.1s ease;
+}
+
+/* 第二张图片初始不可见 */
+.alt-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* 鼠标悬停时切换显示两张图片 */
+.grid-item:hover .main-img {
+    opacity: 0;
+}
+
+.grid-item:hover .alt-img {
+    opacity: 1;
+}
+
+/* 描述文本 */
+.item-description {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: -40px;
+    left: 0px;
+    color: rgb(20, 20, 20);
+}
+
+.circle-text {
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.9px;
+}
+
+/* Responsive Design: 当屏幕宽度小于 768px 时 */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);  /* 每行显示 2 个项目 */
+        gap: 20px;
+        width: 90%;  /* 容器宽度设置为 100% */
+        margin-bottom: -20px; 
+        grid-row-gap: 20px;  /* 控制垂直行之间的间距 */
+    }
+    .content {
+        top: 10px;  /* 增加 top 的值，将整个内容区域向下移动，避免遮挡 */
+        left: 20px;
+        text-align: start;  /* 在小屏幕上居中显示文本 */
+        width: 90%;  /* 容器宽度调整为 90%，避免过于拥挤 */
+    }
+
+    .wooden-beads-link {
+        position: absolute;
+        top: 30px;
+    }
+
+    .content h1 {
+    margin-top: 90px;
+    }
+
+    .content p {
+    margin-top: 45px;  /* 调整 p 上方的间距 */
+    }
+
+    .item-description {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        position: absolute;
+        bottom: -30px;
+        left: 0px;
+        color: rgb(20, 20, 20);
+    }
+    /* 可以根据需要调整 grid-item 的最大宽度 */
+    .grid-item {
+        max-width: 200px;  /* 每个项目的最大宽度 */
+        text-align: start;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 581px;
+        left: 300px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        color: #25252500;
+        text-align: left;
+        max-width: 300px;
+        word-wrap: break-word;
+        z-index: 1000;  /* 确保 footer 在最上层 */
+    }
+}
