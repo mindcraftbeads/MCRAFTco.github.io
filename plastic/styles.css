@@ -44,7 +44,7 @@ body, html {
 /* 确保 footer 在最左下角 */
 .footer {
     position: absolute;
-    bottom: -15400px;
+    bottom: -7340px;
     left: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;

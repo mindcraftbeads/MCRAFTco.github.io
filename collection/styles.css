@@ -103,7 +103,7 @@ body, html {
     position: absolute;
     top: 10%;
     left: -10.5%;
-    width: 105%;      /* 调整面板宽度，如需更大或更小，可修改为 70%、90% 等 */
+    width: 107%;      /* 调整面板宽度，如需更大或更小，可修改为 70%、90% 等 */
     height: 95%;     /* 调整面板高度，如需更高或更矮，可修改为 50%、70% 等 */
     padding: 20px;   /* 内边距，增加面板内容与边缘的距离 */
     box-sizing: border-box;
@@ -145,7 +145,7 @@ body, html {
 
 .option-item a:hover {
     background-color: #e9d8c3;
-    left: -10%;
+    left: -13%;
     width: 99%;
 }
 
@@ -167,7 +167,7 @@ body, html {
 .footer {
     position: absolute;
     bottom: -220px;
-    left: -1155px;
+    left: -1120px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.3rem;  /* Adjust font size */
     color: #333;  /* Set text color */
