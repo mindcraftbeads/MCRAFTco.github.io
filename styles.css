@@ -291,7 +291,7 @@ body {
 .footer {
     position: fixed;  /* 固定在页面底部 */
     bottom: 5px;     /* 距离底部 20px */
-    left: 1560px;       /* 距离左边 20px */
+    left: 1500px;       /* 距离左边 20px */
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;  /* 调整字体大小 */
     color: #333;  /* 设置文本颜色 */
