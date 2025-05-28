@@ -14,6 +14,7 @@ body, html {
     position: relative;
     flex-direction: column;
     padding-bottom: 0;  /* 确保没有额外的底部填充 */
+    padding-top: 200px;
 }
 
 .logo img {
@@ -28,7 +29,7 @@ body, html {
 
 .footer {
     position: absolute;
-    bottom: -2400px;
+    bottom: -1700px;
     left: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -64,10 +65,10 @@ body, html {
     grid-template-columns: repeat(5, 1fr);  /* 每行显示 5 个项目 */
     gap: 10px 20px;  /* 设置项目之间的间距 */
     padding: 20px;
-    margin-top: 200px;  /* 顶部间距 */
+    margin-top: 75px;  /* 顶部间距 */
     width: 97.5%;  /* 确保容器宽度足够 */
     max-width: 100%;  /* 容器最大宽度为 100% */
-    grid-row-gap: 20px;
+    grid-row-gap: 10px;
     z-index: 1;
 }
 
@@ -80,8 +81,8 @@ body, html {
 
 .image-container img {
     width: 100%;
-    height: 500px;  /* 设置固定高度，例如200px */
-    object-fit: cover;  /* 保持裁剪以填充容器 */
+    height: 280px;  /* 设置固定高度，例如200px */
+    object-fit: contain;  /* 保持裁剪以填充容器 */
 }
 
 /* 第二张图片初始不可见 */
