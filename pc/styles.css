@@ -13,6 +13,7 @@ body, html {
     height: auto;
     position: relative;
     flex-direction: column;
+    padding-top: 130px;
 }
 
 .logo img {
@@ -29,7 +30,7 @@ body, html {
 /* 类别名称文本的样式 */
 .category-name {
     position: relative;  /* 绝对定位 */
-    top: 220px;  /* 距离页面顶部的距离，可以根据需要调整 */
+    top: 110px;  /* 距离页面顶部的距离，可以根据需要调整 */
     left: 10px;  /* 距离左边的距离，可以根据需要调整 */
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
@@ -44,7 +45,7 @@ body, html {
 /* 确保 footer 在最左下角 */
 .footer {
     position: absolute;
-    bottom: -6100px;
+    bottom: -5300px;
     left: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -97,7 +98,7 @@ body, html {
     grid-template-columns: repeat(6, 1fr);  /* 每行显示 6 个项目 */
     gap: 10px 20px;  /* 设置项目之间的间距 */
     padding: 20px;
-    margin-top: 200px;  /* 控制顶部与内容之间的间距 */
+    margin-top: 100px;  /* 控制顶部与内容之间的间距 */
     margin-bottom: -20px; 
     width: 97.6%;  /* 容器宽度设置为 100% */
     max-width: 100%;  /* 容器最大宽度为 100% */

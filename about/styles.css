@@ -32,15 +32,15 @@ body, html {
 }
 
 .left img {
-    margin-top: 160px;
-    margin-left: 950px;
-    width: 25%;
+    margin-top: 91px;
+    margin-left: 810px;
+    width: 27%;
     height: auto; /* 保持图片的比例 */
 }
 
 .footer {
     position: absolute;
-    top: 900px; /* 减小 top 的值，让 footer 更接近页面底部 */
+    top: 710px; /* 减小 top 的值，让 footer 更接近页面底部 */
     left: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
@@ -53,8 +53,8 @@ body, html {
 
 .content {
     position: absolute;
-    top: 260px;  /* 增加 top 的值，将整个内容区域向下移动 */
-    left: 22px;  /* 调整 left 的值，将内容向右移动 */
+    top: 190px;  /* 增加 top 的值，将整个内容区域向下移动 */
+    left: 20px;  /* 调整 left 的值，将内容向右移动 */
     text-align: left;
     max-width: 500px;
     z-index: 10;

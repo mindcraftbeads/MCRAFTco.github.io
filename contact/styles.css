@@ -20,23 +20,16 @@ body {
 
 
 .contact-us {
-    padding: 20px;
-    margin-top: 50px;  /* 确保整体容器下移 */
+    padding-top: 760px;  /* 增加 padding-top 让框和内容一起下移 */
+    margin-left: 550px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     color: #252525;
     text-align: left;
-    margin: 0 auto;
     max-width: 600px;
     background-color: #ffffff00;
     font-weight: normal;  /* 将 CONTACT US 字体加粗 */
     z-index: 1;
-}
-
-/* Alternatively, use padding-top to move content and container together */
-.contact-us {
-    padding-top: 800px;  /* 增加 padding-top 让框和内容一起下移 */
-    margin-left: 480px;
 }
 
 /* Table styles */
@@ -59,7 +52,7 @@ body {
 
 .left img {
     position: relative;  /* 或 absolute */
-    top: -790px;  /* 使图片上移 */
+    top: -740px;  /* 使图片上移 */
     margin-left: 510px;
     width: 35%;
     height: auto; /* 保持图片的比例 */
@@ -70,23 +63,17 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  /* Alternatively, use padding-top to move content and container together */
   .contact-us {
-    padding: 20px;
-    margin-top: 50px;  /* 确保整体容器下移 */
+    padding-top: 420px;  /* 增加 padding-top 让框和内容一起下移 */
+    margin-left: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.7rem;
     color: #252525;
     text-align: left;
-    margin: 0 auto;
     max-width: 600px;
     background-color: #ffffff00;
     font-weight: normal;  /* 将 CONTACT US 字体加粗 */
     z-index: 1;
-}
-.contact-us {
-    padding-top: 420px;  /* 增加 padding-top 让框和内容一起下移 */
-    margin-left: 20px;
 }
 
 .logo {

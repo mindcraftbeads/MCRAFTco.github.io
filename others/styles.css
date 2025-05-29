@@ -14,7 +14,7 @@ body, html {
     position: relative;
     flex-direction: column;
     padding-bottom: 0;  /* 确保没有额外的底部填充 */
-    padding-top: 200px;
+    padding-top: 130px;
 }
 
 .logo img {
@@ -29,7 +29,7 @@ body, html {
 
 .footer {
     position: absolute;
-    bottom: -2100px;
+    bottom: -2700px;
     left: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
