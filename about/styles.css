@@ -16,13 +16,13 @@ body, html {
 }
 
 .logo img {
-    width: 100px;
+    width: 400px;
 }
 
 .logo {
     position: absolute;
-    top: 5px;
-    left: 20px;
+    top: -50px;
+    left: -135px;
 }
 
 

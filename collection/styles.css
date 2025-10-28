@@ -8,11 +8,11 @@ body, html {
 
 .container {
     display: flex;
-    justify-content: space-evenly; /* 均勻分佈，最大化邊緣間距 */
     flex-wrap: wrap; /* 如果螢幕太小，允許換行 */
-    gap: 40px; /* 增加間距，根據需要調整 */
+    justify-content: center; /* 水平居中 */
+    gap: 15px; /* 增加間距，根據需要調整 */
     width: 100%; /* 確保容器佔滿頁面寬度 */
-    padding: 0 20px; /* 可選：左右內邊距，避免圖片貼邊 */
+    padding: 50px 20px 0; /* 使用上內邊距把整組內容整體下移，避免外邊距折疊 */
     box-sizing: border-box; /* 確保 padding 不影響寬度 */
 }
 
@@ -20,9 +20,9 @@ body, html {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 150px;  /* 增加 margin-top 来将图片区域下移 */
+    margin-top: 0;  /* 交由 .container 的 padding-top 控制整體下移 */
     justify-items: center;
-    width: 80%;
+    width: 100%;
 }
 
 /* 每个图片项 */
@@ -30,10 +30,12 @@ body, html {
     width: 30%;  /* 设置图片宽度占据容器的 30% */
     text-align: center;  /* 使图片和文字居中 */
         position: relative;  /* Add relative positioning for positioning the text */
-        max-width: 250px; /* Set max width for each image */
+        max-width: 230px; /* Set max width for each image */
         height: auto;
         padding: 0;  /* Remove padding to avoid extra space */
-        margin-top: 350px; 
+        /* margin-top: 200px; */
+        margin-top: 0;
+        margin-bottom: 5px; /* 控制上下两行之间的间距 */
         border: none; /* Remove any border */
         box-shadow: none; /* Remove any shadow */
     }
@@ -52,19 +54,19 @@ body, html {
 
 /* 更改 logo 大小 */
 .logo img {
-    width: 100px;  /* 增大 logo 的大小 */
+    width: 650px;  /* 增大 logo 的大小 */
 }
 
 /* 更改 logo 位置 */
 .logo {
     position: absolute;
-    top: 3px;  /* 更改距离顶部的距离 */
-    left: 20px; /* 更改距离左边的距离 */
+    top: -130px;  /* 更改距离顶部的距离 */
+    left: center; /* 更改距离左边的距离 */
 }
 
 .content {
     position: absolute;
-    top: 190px;
+    top: 100px;
     left: 20px;
     text-align: left;
     max-width: 800px;
@@ -89,12 +91,14 @@ body, html {
 /* Add text to the bottom left corner of the image */
 .item-name {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: -3px;
+    left: 66px;
     font-family: 'Courier New', Courier, monospace;
+     white-space: nowrap; /*
     font-size: 1rem; /* Adjust the font size */
     color: black; /* Set the text color to black */
     padding: 5px; /* Optional: Add padding around the text */
+     transform: translateX(-50%); 
     /* Removed border and border-radius */
 }
 
@@ -103,11 +107,11 @@ body, html {
     position: absolute;
     top: 10%;
     left: -10.5%;
-    width: 107%;      /* 调整面板宽度，如需更大或更小，可修改为 70%、90% 等 */
+    width: 125%;      /* 调整面板宽度，如需更大或更小，可修改为 70%、90% 等 */
     height: 95%;     /* 调整面板高度，如需更高或更矮，可修改为 50%、70% 等 */
-    padding: 20px;   /* 内边距，增加面板内容与边缘的距离 */
+    padding: 30px;   /* 内边距，增加面板内容与边缘的距离 */
     box-sizing: border-box;
-    background-color: rgb(173, 174, 160);
+    background-color: rgb(195, 196, 186);
     display: none;
     align-items: center;
     justify-content: center;
@@ -137,10 +141,16 @@ body, html {
     text-align: center;      /* 文本居中 */
 }
 
+
 .beads-item img {
     position: relative;
     top: 80px; /* 向下移動 20px */
     left: -20px;
+}
+
+/* 微调 beads 项的遮罩位置（向左偏移） */
+.beads-item .options {
+    left: -19%; /* 比全局的 -10.5% 再向左偏移一些，可按需求微调数值 */
 }
 
 .option-item a:hover {
@@ -166,8 +176,8 @@ body, html {
 /* Footer Content */
 .footer {
     position: absolute;
-    bottom: -185px;
-    left: -1100px;
+    bottom: -50px;
+    left: -55px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.3rem;  /* Adjust font size */
     color: #333;  /* Set text color */
@@ -195,94 +205,4 @@ body, html {
 /* Ensure text wraps correctly within the footer */
 .footer .acknowledgement {
     white-space: normal; /* Allow text to wrap */
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .images {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .image-item {
-        max-width: 200px; /* Slightly smaller images on smaller screens */
-    }
-    .item-name {
-        position: absolute;
-        top: 170px;
-        font-size: 0.8rem; /* Adjust the font size */
-    }
-    .about-link {
-        font-size: 1rem;
-    }
-
-    .beads-item img {
-        position: relative;
-        top: 50px; /* 向下移動 20px */
-        left: -20px;
-    }
-
-    /* .options { ... } 移除或注释以避免重复定义 */
-    /* .options {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 58%;
-        z-index: 999;
-        display: none;
-    }
-    .options {
-        position: absolute;
-        top: 120%;
-        left: 0;
-        z-index: 999;
-        display: none;
-    } */
-    
-
-    @media screen and (max-width: 768px) {
-        .circle-text {
-            position: relative;  /* 相对定位，方便调整位置 */
-            top: 190px;           /* 向下移动 20px */
-            left: 905px;          /* 向右移动 10px */
-            font-size: 1rem;     /* 调整字体大小 */
-            letter-spacing: -0.5px; /* 缩小字母之间的间距 */
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between; /* 均勻分佈，最大化邊緣間距 */
-            flex-wrap: wrap; /* 如果螢幕太小，允許換行 */
-            gap: 10px; /* 增加間距，根據需要調整 */
-            width: 110%; /* 確保容器佔滿頁面寬度 */
-            padding: 0 20px; /* 可選：左右內邊距，避免圖片貼邊 */
-            box-sizing: border-box; /* 確保 padding 不影響寬度 */
-        }
-        .option-item a {
-            display: block;
-            padding: 8px 10px;
-            text-decoration: none;
-            font-family: 'Courier New', Courier, monospace;
-            color: #751212;
-            font-size: 0.8rem;
-        }
-        .footer {
-            position: absolute;
-            bottom: -220px;
-            left: -1288px;
-        }
-
-        .option-item {
-            background-color: #8c8a8a1a;
-        }
-
-        /* 修改 acknowledgement 的位置 */
-        .acknowledgement {
-            position: relative;  /* 相对定位 */
-            top: 190px;           /* 向下移动 10px */
-            left: 905px;          /* 向右移动 15px */
-            font-size: 0.9rem;   /* 调整字体大小 */
-            line-height: 1.4;    /* 调整行高 */
-            max-width: 360px;
-        }
-    }
 }

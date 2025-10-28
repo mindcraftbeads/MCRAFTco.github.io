@@ -17,15 +17,15 @@ body, html {
 }
 
 .logo img {
-    width: 100px;
+    width: 400px;
 }
 
 .logo {
     position: absolute;
-    top: 5px;
-    left: 15px;
-    z-index: 100; 
+    top: -50px;
+    left: -135px;
 }
+
 
 /* 类别名称文本的样式 */
 .category-name {
